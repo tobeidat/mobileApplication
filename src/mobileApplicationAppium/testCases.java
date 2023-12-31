@@ -1,10 +1,10 @@
 package mobileApplicationAppium;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.Assert;
+//import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -24,7 +24,7 @@ public class testCases {
 	@BeforeTest
 	public void setup() {
 		caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-		caps.setCapability(MobileCapabilityType.DEVICE_NAME, "aa");
+		caps.setCapability(MobileCapabilityType.DEVICE_NAME, "auto");
 //		caps.setCapability("chromedriverExecutable", "D:\\chrome\\chromedriver.exe");
 //		caps.setCapability(MobileCapabilityType.BROWSER_NAME, "chrome");
 		File calculatorApp= new File("src/calculatorApplication/calculator.apk");
