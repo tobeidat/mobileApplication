@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 //import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
 //import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -27,8 +28,8 @@ public class testCases {
 		caps.setCapability(MobileCapabilityType.DEVICE_NAME, "auto");
 //		caps.setCapability("chromedriverExecutable", "D:\\chrome\\chromedriver.exe");
 //		caps.setCapability(MobileCapabilityType.BROWSER_NAME, "chrome");
-		File calculatorApp= new File("src/calculatorApplication/calculator.apk");
-		caps.setCapability(MobileCapabilityType.APP,calculatorApp.getAbsolutePath());
+		File calculatorApp = new File("src/calculatorApplication/calculator.apk");
+		caps.setCapability(MobileCapabilityType.APP, calculatorApp.getAbsolutePath());
 
 	}
 
@@ -52,11 +53,16 @@ public class testCases {
 	@Test(enabled = false)
 	public void calculatorApplication() throws MalformedURLException {
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
-//	    driver.findElement(By.id("com.google.android.calculator:id/digit_5")).click();
-//	    driver.findElement(By.id("com.google.android.calculator:id/op_mul")).click();
-//	    driver.findElement(By.id("com.google.android.calculator:id/digit_4")).click();
-//	    String result=driver.findElement(By.id("com.google.android.calculator:id/result_preview")).getText();
-//	    Assert.assertEquals(result,"20");
+		driver.findElement(By.id("com.google.android.calculator:id/digit_5")).click();
+		driver.findElement(By.id("com.google.android.calculator:id/op_mul")).click();
+		driver.findElement(By.id("com.google.android.calculator:id/digit_4")).click();
+		String result = driver.findElement(By.id("com.google.android.calculator:id/result_preview")).getText();
+		Assert.assertEquals(result, "20");
+
+	}
+
+	@Test(enabled = false)
+	public void clickAtAllNumbers() {
 		List<WebElement> allNumbers = driver.findElements(By.className("android.widget.ImageButton"));
 
 		for (int i = 0; i < allNumbers.size(); i++) {
@@ -65,7 +71,6 @@ public class testCases {
 				allNumbers.get(i).click();
 
 		}
-
 	}
 
 	@Test()
