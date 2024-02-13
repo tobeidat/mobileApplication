@@ -61,7 +61,8 @@ public class testCases {
 	}
 
 	@Test(enabled = false)
-	public void clickAtAllNumbers() {
+	public void clickOtAllNumbers() throws MalformedURLException {
+		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
 		List<WebElement> allNumbers = driver.findElements(By.className("android.widget.ImageButton"));
 
 		for (int i = 0; i < allNumbers.size(); i++) {

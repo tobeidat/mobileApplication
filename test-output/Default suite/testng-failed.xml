@@ -5,9 +5,9 @@
     <classes>
       <class name="mobileApplicationAppium.testCases">
         <methods>
-          <include name="clickOnEvenNumbers"/>
           <include name="postTest"/>
           <include name="setup"/>
+          <include name="clickAtAllNumbers"/>
         </methods>
       </class> <!-- mobileApplicationAppium.testCases -->
     </classes>
